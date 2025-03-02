@@ -21,6 +21,7 @@ let toggleDebug = true;
 document.getElementById("auto_button").onclick = autoGenerateTriangles;
 document.getElementById("toggle_debug").onclick = toggleDebugFunc;
 document.getElementById("clear_triangles").onclick = clearTriangles;
+document.getElementById("back_button").onclick = () => { location.href  = "../index.html"};
 
 let slider;
 let sliderList = [];

@@ -1,0 +1,59 @@
+body{
+
+    margin: 0;
+}
+
+main {
+    min-height: 1080px;
+}
+.navbar ul{
+    list-style-type: none;
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+
+}
+
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+
+.navbar li{
+    float: left;
+}
+
+.bottom-navbar ul{
+    list-style-type: none;
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.bottom-navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    text-align: left;
+    display: block;
+    max-width: 100px;
+
+}
+
+.bottom-navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+.bottom-navbar li{
+    float:none;
+}
