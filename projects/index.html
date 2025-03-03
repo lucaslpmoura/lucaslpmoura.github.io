@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+
     </head>
     <body>
         <nav class="navbar">
@@ -13,9 +15,16 @@
         </nav>
 
         <main>
-            <p>Projetos!</p>
             <ul>
-                <li><a href="./shapes/index.html">Shapes!</a></li>
+                <div id="shapes_card" class="project_card" href="/shapes/index.html">
+                    <img src ="../assets/images/shapes_thumbnail.png"></img>
+                    <div class="project_text">
+                        <h4><b>Shapes</b></h4>
+                        <p>Desenhe diversas formas geómetricas diretamente no seu navagador!</p>
+                        <p>Feito com: p5.js</p>
+                    </div>
+                </div>
+
             </ul>
         </main>
 
@@ -30,5 +39,5 @@
             
         </nav>
     </body>
-    
+    <script src="script.js"></script>
 </html>
