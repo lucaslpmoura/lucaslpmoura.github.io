@@ -18,7 +18,7 @@
 
     <main style="display: flex; flex-direction: column; align-items: center;">
         <button id="back_button" style="height: 100px;width: 150px; margin: 20px;">Voltar</button>
-        <embed class="content" type="text/javascript" src="shapes/index.html" width="1600" height="900">
+        <embed id="content" class="content" type="text/javascript" width="1600" height="900">
     </main>
 
     <nav class="bottom-navbar">
@@ -31,6 +31,8 @@
 </body>
 <script>
     document.getElementById("back_button").onclick = () => {location.href = "index.html"}
+    let project = localStorage.getItem("project");
+    document.getElementById("content").src = `${project}/index.html`;
 </script>
 
 </html>
