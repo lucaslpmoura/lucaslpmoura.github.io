@@ -10,7 +10,7 @@ let selectedShape = TRIANGLE;
 let currentColor = [0, 100, 0];
 
 
-let width = 1200;
+let width = 1600;
 let height = 900;
 let drawWidth = 0.75 * width;
 
@@ -24,7 +24,7 @@ document.getElementById("shape_select_button").onclick = changeSelectedShape;
 document.getElementById("auto_button").onclick = autoGenerateShapes;
 document.getElementById("toggle_debug_button").onclick = toggleDebugFunc;
 document.getElementById("clear_shapes_button").onclick = clearShapes;
-document.getElementById("back_button").onclick = () => { location.href = "../index.html" };
+//document.getElementById("back_button").onclick = () => { window.location.href = "../index.html" };
 
 let triangleSlider, rectangleSlider;
 let sliderList = [];
@@ -58,7 +58,12 @@ function draw() {
 
 
 
-    //triangle(oldPointA[0], oldPointA[1], oldPointB[0], oldPointB[1], oldPointC[0], oldPointC[1])
+    /*
+    The shapes data structure is made of:
+    shape = [ [[x1,y1],[x2,y2]...], [r,g,b]]
+    where shape[0] is a list of the points used to draw the shape (triangles use 3, rects use 2)
+    and shape[1] is the color vector with rgb values
+    */
     for (let i = 0; i < shapes.length; i++) {
         fill(shapes[i][1][0], shapes[i][1][1], shapes[i][1][2]);
         if (shapes[i][0].length == TRIANGLE) {

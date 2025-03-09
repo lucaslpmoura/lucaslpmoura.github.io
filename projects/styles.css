@@ -8,7 +8,7 @@ main {
 }
 .navbar ul{
     list-style-type: none;
-    background-color: grey;
+    background-color: rgb(133, 120, 120);
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -34,7 +34,7 @@ main {
 
 .bottom-navbar ul{
     list-style-type: none;
-    background-color: grey;
+    background-color: rgb(133, 120, 120);
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -62,7 +62,7 @@ main {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;   
     display: flex;
-    cursor:auto ;
+    cursor: auto ;
     margin: 0 100px 20px 5px;
     max-height: 300px;
 }
@@ -80,3 +80,6 @@ main {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.content{
+    align-content: center;
+}
