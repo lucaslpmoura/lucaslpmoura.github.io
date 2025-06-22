@@ -3,15 +3,21 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import { createI18n } from 'vue-i18n'
+import messages from './localization/messages.ts'
+
 var currentPageIconIndex: number = 0;
 
-
-
+const i18n = createI18n({
+    locale: 'pt-BR',
+    backupLocale: 'en-US',
+    messages
+});
+export default i18n;
 
 const app = createApp(App)
 
-
-
+app.use(i18n);
 app.mount('#app')
 
 let icon: HTMLLinkElement = document.getElementById("page_icon") as HTMLLinkElement;

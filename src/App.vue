@@ -6,6 +6,9 @@ import TypedLine   from './components/TypedLine.vue'
 import Canvas from './components/Canvas.vue'
 import CornerButton from './components/CornerButton.vue'
 import CornerButtonGroup from './components/CornerButtonGroup.vue'
+import LanguageButton  from './components/LanguageButton.vue'
+
+
 
 </script>
 
@@ -13,6 +16,7 @@ import CornerButtonGroup from './components/CornerButtonGroup.vue'
   <template>
       <Canvas></Canvas>
 
+      <title>      {{ $t('underConstruction') }}</title>
     <col>
         <TypedLine 
           style="margin-bottom: 10px; font-family: joystix; font-size: 40pt; color: var(--color-text);;" 
@@ -20,12 +24,12 @@ import CornerButtonGroup from './components/CornerButtonGroup.vue'
         </TypedLine>
         <TypedLine
           style="margin-bottom: 150px; font-family: seven-seg ; font-size: 30pt; font-weight: normal;"
-          text="Computer Engineer">
+          :text= "$t('computerEngineerSubtitle')">
         </TypedLine>
     </col>
 
     <h2>
-      Under construction.
+      {{ $t('underConstruction') }}
     </h2>
 
     <CornerButtonGroup>
@@ -33,6 +37,7 @@ import CornerButtonGroup from './components/CornerButtonGroup.vue'
       <CornerButton img_src = "github.png" tooltip="Source Code" link="https://www.github.com/lucaslpmoura/lucaslpmoura.github.io" ></CornerButton>
     </CornerButtonGroup>
     
-
+    <LanguageButton defaultLocale="pt-BR"></LanguageButton>
+  
   </template>
 
