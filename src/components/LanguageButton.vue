@@ -1,11 +1,9 @@
-<template>
-    <div class="language-button">
-        <span :class="locale_class"></span>
-    </div>
-</template>
+
 
 <script>
+    
     import "flag-icons/css/flag-icons.min.css";
+
     export default {
         name: "LanguageButton",
         props: {
@@ -14,23 +12,43 @@
                 required: true
             }
         },
+        methods: {
+            showLocales: function () {
+
+            },
+            changeLocale: function () {
+                this.$i18n.locale = this.$i18n.locale == 'en-US' ? 'pt-BR' : 'en-US';
+                this.setLocaleFlagIcon();
+            },
+            setLocaleFlagIcon: function() {
+                this.locale_class = 'pt-BR'
+                switch(this.$i18n.locale){
+                    case 'en-US':
+                        this.locale_class = "fi fi-us";
+                        break;
+                    case 'pt-BR':
+                        this.locale_class = 'fi fi-br';
+                        break;
+                }
+            }
+        },
         data() {
             return {
-            locale_class : ""
+            locale_class : "",
+
             }
         },
         mounted() {
-            this.locale_class = 'pt-BR'
-            if(this.defaultLocale == 'en-US'){
-                this.locale_class = "fi fi-us";
-            }
-            if(this.defaultLocale == 'pt-BR'){
-                this.locale_class = "fi fi-br";
-            }
-        }
+            this.setLocaleFlagIcon();
+        },
     }
 </script>
 
+<template>
+    <div class="language-button" @click="changeLocale">
+        <span :class="locale_class"></span>
+    </div>
+</template>
 <style scoped>
 
 .language-button {

@@ -16,7 +16,7 @@ import LanguageButton  from './components/LanguageButton.vue'
   <template>
       <Canvas></Canvas>
 
-      <title>      {{ $t('underConstruction') }}</title>
+      <title>{{ $t('underConstruction') }}</title>
     <col>
         <TypedLine 
           style="margin-bottom: 10px; font-family: joystix; font-size: 40pt; color: var(--color-text);;" 
@@ -33,8 +33,8 @@ import LanguageButton  from './components/LanguageButton.vue'
     </h2>
 
     <CornerButtonGroup>
-      <CornerButton img_src="restart.png" tooltip="Restart Background Simulation" external_method="restartAutoSimulation()"></CornerButton>
-      <CornerButton img_src = "github.png" tooltip="Source Code" link="https://www.github.com/lucaslpmoura/lucaslpmoura.github.io" ></CornerButton>
+      <CornerButton img_src="restart.png" :tooltip="$t('restartBackgroundSimulation')" external_method="restartAutoSimulation()"></CornerButton>
+      <CornerButton img_src = "github.png" :tooltip="$t('sourceCode')" link="https://www.github.com/lucaslpmoura/lucaslpmoura.github.io" ></CornerButton>
     </CornerButtonGroup>
     
     <LanguageButton defaultLocale="pt-BR"></LanguageButton>

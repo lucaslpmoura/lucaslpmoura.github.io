@@ -1,6 +1,6 @@
 <template>
     <div class="corner-button" :onclick="external_method">
-        <a :href="link"> <img :src="img_src">></a>
+        <a :href="link"> <img :src="img_src"></a>
         <span class="tooltiptext">{{tooltip}}</span>
     </div>
   </template>
