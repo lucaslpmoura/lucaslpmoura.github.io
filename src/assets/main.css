@@ -44,6 +44,14 @@ a,
   font-style: normal;
 }
 
+@font-face {
+  font-family: "CourierPrime";
+  src: url('@/assets/fonts/CourierPrime-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @media (min-width: 1024px) {
   body {
     display: flex;

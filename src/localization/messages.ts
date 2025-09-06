@@ -8,7 +8,7 @@ const messages = {
     },
     'pt-BR': {
         'underConstruction': 'Em construção.',
-        'computerEngineerSubtitle': 'Engenheiro de Computacao',
+        'computerEngineerSubtitle': 'Engenheiro de Computação',
         'restartBackgroundSimulation': 'Reiniciar Simulação de Fundo',
         'sourceCode': 'Código Fonte'
     }

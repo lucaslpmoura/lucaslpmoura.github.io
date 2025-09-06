@@ -19,11 +19,11 @@ import LanguageButton  from './components/LanguageButton.vue'
       <title>{{ $t('underConstruction') }}</title>
     <col>
         <TypedLine 
-          style="margin-bottom: 10px; font-family: joystix; font-size: 40pt; color: var(--color-text);;" 
+          style="margin-bottom: 10px; font-family: CourierPrime; font-size: 40pt; color: var(--color-text);;" 
           text="Lucas Moura">
         </TypedLine>
         <TypedLine
-          style="margin-bottom: 150px; font-family: seven-seg ; font-size: 30pt; font-weight: normal;"
+          style="margin-bottom: 150px; font-family: CourierPrime ; font-size: 30pt; font-weight: normal;"
           :text= "$t('computerEngineerSubtitle')">
         </TypedLine>
     </col>
