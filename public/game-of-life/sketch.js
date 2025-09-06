@@ -40,15 +40,40 @@ function createCells(){
   }
 }
 
-function drawCell(cell){
+function drawAllCells(cells){
+  let animationSteps = 10;
+  while(animationSteps >= 0){
+    let scalingFactor = 11 % animationSteps;
+    console.log(animationSteps);
+    for(let i = 0; i < gridSize; i++){
+      for(let j = 0; j < gridSize; j++){
+        drawCell(cells[i][j], scalingFactor)
+      }
+    }
+    animationSteps--;
+  }
+}
+
+function drawCell(cell, factor){
+
   if(cell.state){
     fill(accentColor[0], accentColor[1], accentColor[2], accentColor[3]);
   }else{
     fill(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
   }
-  noStroke();
-  rect(cell.coord[0] * cellSize, cell.coord[1] * cellSize, cellSize, cellSize,4);
+
+  let relativeSize = (factor * 0.1) * cellSize;
+  let xPos = (cell.coord[0] * cellSize) + (cellSize - relativeSize);
+  let yPos = (cell.coord[1] * cellSize) + (cellSize - relativeSize);
+  renderCell(xPos, yPos, relativeSize, 4);
+  
 }
+
+function renderCell(xPos, yPos, size, radius){
+  noStroke();
+  rect(xPos, yPos, size, size, radius);
+}
+
 
 function setup() {
   height = windowHeight;
@@ -62,14 +87,10 @@ if (autoMode == true){
 }
 
 function draw() {
-  background(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
 
-  for(let i = 0; i < gridSize; i++){
-    for(let j = 0; j < gridSize; j++){
-      drawCell(cells[i][j]);
-    }
-    
-  }
+  background(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
+  frameRate(2);
+  drawAllCells(cells);
 }
 
 function mouseClicked(){
@@ -270,3 +291,10 @@ function simulate(){
   }
 }
 
+
+function sleep(millisecondsDuration)
+{
+  return new Promise((resolve) => {
+    setTimeout(resolve, millisecondsDuration);
+  })
+}
