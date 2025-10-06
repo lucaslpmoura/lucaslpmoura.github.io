@@ -1,43 +1,42 @@
 <script setup>
-import { Comment, ref } from 'vue'
-import CustomButton from './components/CustomButton.vue'
-import ButtonGroup from './components/ButtonGroup.vue'
-import TypedLine   from './components/TypedLine.vue'
-import Canvas from './components/Canvas.vue'
-import CornerButton from './components/CornerButton.vue'
-import CornerButtonGroup from './components/CornerButtonGroup.vue'
-import LanguageButton  from './components/LanguageButton.vue'
+import { RouterView, RouterLink } from "vue-router";
 
-
-
+import Canvas from "./components/Canvas.vue";
+import CornerButtonGroup from "./components/CornerButtonGroup.vue";
+import CornerButton from "./components/CornerButton.vue";
+import LanguageButton from "./components/LanguageButton.vue";
 </script>
 
+<template>
+  <main>
+    <Canvas class="background-canvas"></Canvas>
 
-  <template>
-      <Canvas></Canvas>
-
-      <title>{{ $t('underConstruction') }}</title>
-    <col>
-        <TypedLine 
-          style="margin-bottom: 10px; font-family: CourierPrime; font-size: 40pt; color: var(--color-text);;" 
-          text="Lucas Moura">
-        </TypedLine>
-        <TypedLine
-          style="margin-bottom: 150px; font-family: CourierPrime ; font-size: 30pt; font-weight: normal;"
-          :text= "$t('computerEngineerSubtitle')">
-        </TypedLine>
-    </col>
-
-    <h2>
-      {{ $t('underConstruction') }}
-    </h2>
+    <RouterView></RouterView>
 
     <CornerButtonGroup>
-      <CornerButton img_src="restart.png" :tooltip="$t('restartBackgroundSimulation')" external_method="restartAutoSimulation()"></CornerButton>
-      <CornerButton img_src = "github.png" :tooltip="$t('sourceCode')" link="https://www.github.com/lucaslpmoura/lucaslpmoura.github.io" ></CornerButton>
+      <CornerButton
+        img_src="restart.png"
+        :tooltip="$t('restartBackgroundSimulation')"
+        external_method="restartAutoSimulation()"
+      ></CornerButton>
+      <CornerButton
+        img_src="github.png"
+        :tooltip="$t('sourceCode')"
+        link="https://www.github.com/lucaslpmoura/lucaslpmoura.github.io"
+      ></CornerButton>
     </CornerButtonGroup>
-    
-    <LanguageButton defaultLocale="pt-BR"></LanguageButton>
-  
-  </template>
 
+     <LanguageButton defaultLocale="pt-BR"></LanguageButton>
+  </main>
+</template>
+
+<style scoped>
+.background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* fica atrás do texto */
+  width: 100%;
+  height: 100%;
+}
+</style>

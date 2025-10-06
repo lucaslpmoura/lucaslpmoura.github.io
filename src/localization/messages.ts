@@ -3,14 +3,18 @@ const messages = {
         'underConstruction': 'Under construction.',
         'computerEngineerSubtitle': 'Computer Engineer',
         'restartBackgroundSimulation': 'Restart Background Simulation',
-        'sourceCode': 'Source Code'
+        'sourceCode': 'Source Code',
+        'projects' : 'Projects'
         
     },
     'pt-BR': {
         'underConstruction': 'Em construção.',
         'computerEngineerSubtitle': 'Engenheiro de Computação',
         'restartBackgroundSimulation': 'Reiniciar Simulação de Fundo',
-        'sourceCode': 'Código Fonte'
+        'sourceCode': 'Código Fonte',
+        'projects': "Projetos",
+
+        'mainPageTitle': 'L.M - Início'
     }
 }
 

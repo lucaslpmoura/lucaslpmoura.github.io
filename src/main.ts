@@ -6,7 +6,23 @@ import App from './App.vue'
 import { createI18n } from 'vue-i18n'
 import messages from './localization/messages.ts'
 
+import MainPage from './components/MainPage.vue';
+import ProjectsPage from './components/ProjectsPage.vue'
+
+import { createWebHistory, createRouter } from 'vue-router';
+
 var currentPageIconIndex: number = 0;
+
+export const underConstruction = false;
+const routes = [
+  {path: '/', component: MainPage},
+  {path: '/projects', component: ProjectsPage}
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+});
 
 const i18n = createI18n({
     locale: 'pt-BR',
@@ -15,8 +31,10 @@ const i18n = createI18n({
 });
 export default i18n;
 
-const app = createApp(App)
 
+const app = createApp(App);
+
+app.use(router);
 app.use(i18n);
 app.mount('#app')
 
